@@ -2,7 +2,7 @@ import { TodoWrapper } from "./components/TodoWrapper";
 
 function App() {
   return (
-    <div className="bg-slate-200">
+    <div>
       <TodoWrapper />
     </div>
   );
