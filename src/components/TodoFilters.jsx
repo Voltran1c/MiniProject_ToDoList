@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 
 const TodoFilters = ({ setFilter }) => {
   return (
@@ -20,6 +20,10 @@ const TodoFilters = ({ setFilter }) => {
       </button>
     </div>
   );
+};
+
+TodoFilters.propTypes = {
+  setFilter: PropTypes.func.isRequired,
 };
 
 export { TodoFilters };

@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import PropTypes from "prop-types";
 
-const TodoForm = ({ addTodo }) => { // รับค่าไว้ในพารามิเตอร์ addTodo
-  const [value, setValue] = useState(""); //เก็บค่าของ input แล้วอัพเดตค่าใน vaule นั้น
+const TodoForm = ({ addTodo }) => {
+  const [value, setValue] = useState("");
 
-  const handleSubmit = (e) => { //เมื่อ submit form จะเรียกใช้ handdleSubmit
-    e.preventDefault(); // หยุดการทำงานของ form จากการรีเฟรชหน้าเว็บ
+  const handleSubmit = (e) => {
+    e.preventDefault();
     if (value) {
       addTodo(value);
-      setValue(""); // ล้างค่า value ใน input เพื่อเตรียมรับค่า todo ใหม่
+      setValue("");
     }
   };
 
@@ -30,6 +31,10 @@ const TodoForm = ({ addTodo }) => { // รับค่าไว้ในพา�
       </div>
     </form>
   );
+};
+
+TodoForm.propTypes = {
+  addTodo: PropTypes.func.isRequired,
 };
 
 export { TodoForm };
